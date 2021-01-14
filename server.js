@@ -15,6 +15,8 @@ async function init() {
 
     const app = express();
 
+    app.use(express.static("./static"));
+
     app.get("/get", async (req, res) => {
       const db = await client.db("eng_db");
       const collection = db.collection("dict");
@@ -40,20 +42,15 @@ async function init() {
       res.json({ size, dict }).end();
     });
 
-    app.listen(process.env.PORT || 3000, function () {
-      console.log(
-        "Express server listening on port %d in %s mode",
-        this.address().port,
-        app.settings.env
-      );
-    });
-
-    app.use(express.static("./static"));
-    // app.listen(PORT);
+    // start the server listening for requests
+    app.listen(process.env.PORT || 3000, () =>
+      console.log("Server is running...")
+    );
 
     // console.log(`running on http://localhost:${PORT}`);
   });
 }
+
 init();
 
 // db.listCollections()
