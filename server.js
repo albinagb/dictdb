@@ -2,8 +2,10 @@ const express = require("express");
 
 const MongoClient = require("mongodb").MongoClient;
 
-const uri =
-  "mongodb+srv://ask:DRNU7O8K9fvKDYEK@cluster0.riujc.mongodb.net/eng_db?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
+
+// const uri =
+//   "mongodb+srv://ask:DRNU7O8K9fvKDYEK@cluster0.riujc.mongodb.net/eng_db?retryWrites=true&w=majority";
 
 async function init() {
   const client = new MongoClient(uri, { useNewUrlParser: true });
