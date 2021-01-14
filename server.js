@@ -1,19 +1,22 @@
 const express = require("express");
+const app = express();
 
 const MongoClient = require("mongodb").MongoClient;
 
-const uri = process.env."mongodb+srv://ask:DRNU7O8K9fvKDYEK@cluster0.riujc.mongodb.net/eng_db?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
 
-// const uri ="mongodb+srv://ask:DRNU7O8K9fvKDYEK@cluster0.riujc.mongodb.net/eng_db?retryWrites=true&w=majority"
-//   ;
+app.use(express.static("static"));
+
+// const uri =
+//   "mongodb+srv://ask:DRNU7O8K9fvKDYEK@cluster0.riujc.mongodb.net/eng_db?retryWrites=true&w=majority";
 
 async function init() {
-  const client = new MongoClient(uri, { useNewUrlParser: true });
+  const client = new MongoClient(uri, { useUnifiedTopology: true });
   await client.connect((err) => {
     // perform actions on the collection object
     if (err) throw err;
 
-    const app = express();
+    // const app = express();
 
     app.get("/get", async (req, res) => {
       const db = await client.db("eng_db");
