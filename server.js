@@ -39,7 +39,15 @@ async function init() {
       let size = Object.keys(dict).length;
       res.json({ size, dict }).end();
     });
-    const PORT = process.env.PORT || 3000;
+
+    app.listen(process.env.PORT || 3000, function () {
+      console.log(
+        "Express server listening on port %d in %s mode",
+        this.address().port,
+        app.settings.env
+      );
+    });
+
     app.use(express.static("./static"));
     app.listen(PORT);
 
