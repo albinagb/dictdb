@@ -1,6 +1,9 @@
 {
   "name": "dictdb",
   "version": "1.0.0",
+  "dependencies": {
+    "express": "*"
+  },
   "engines": {
     "node": "13.x"
   },
