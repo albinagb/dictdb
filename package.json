@@ -1,0 +1,23 @@
+{
+  "name": "dictdb",
+  "version": "1.0.0",
+  "engines": {
+    "node": "13.x"
+  },
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albinagb/dictdb.git"
+  },
+  "author": "Alba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albinagb/dictdb/issues"
+  },
+  "homepage": "https://github.com/albinagb/dictdb#readme"
+}
