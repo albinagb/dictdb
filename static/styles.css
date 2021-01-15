@@ -22,7 +22,7 @@ a {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  margin: 14rem auto;
+  margin: 14rem auto 0;
   padding: 0;
 }
 
