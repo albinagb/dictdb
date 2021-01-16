@@ -28,7 +28,7 @@ a {
 
 .search-field {
   box-shadow: 0 0 1rem 0 rgba(101, 102, 101, 0.3);
-  margin: 15rem auto;
+  margin: 15rem auto 0;
   padding: 0.5rem 3rem;
   background-color: #d2e6d4;
   border-radius: 2rem;
