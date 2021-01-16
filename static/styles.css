@@ -11,7 +11,7 @@ body {
 
 html {
   font-family: Avenir, Helvetica, sans-serif;
-  background: #d5e4df;
+  background: #faf7f3;
 }
 
 a {
@@ -27,16 +27,16 @@ a {
 }
 
 .search-field {
-  box-shadow: 0 0 1rem 0 rgba(52, 53, 52, 0.3);
-  margin: 14rem auto 0;
+  box-shadow: 0 0 1rem 0 rgba(101, 102, 101, 0.3);
+  margin: 15rem auto;
   padding: 0.5rem 3rem;
-  background-color: yellow;
+  background-color: #d2e6d4;
   border-radius: 2rem;
 }
 
 input {
   background-color: inherit;
-  color: inherit;
+  color: #344b59;
   font-family: inherit;
   font-size: 1.5rem;
   outline: none;
@@ -65,6 +65,7 @@ button {
 #code {
   margin-top: 1.5rem;
   font-size: 1.3rem;
+  color: #344b59;
 }
 
 /* #btn {
