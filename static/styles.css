@@ -22,34 +22,49 @@ a {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  margin: 14rem auto 0;
+  margin: 0;
   padding: 0;
+}
+
+.search-field {
+  box-shadow: 0 0 1rem 0 rgba(52, 53, 52, 0.3);
+  margin: 14rem auto 0;
+  padding: 0.5rem 3rem;
+  background-color: yellow;
+  border-radius: 2rem;
 }
 
 input {
   background-color: inherit;
   color: inherit;
   font-family: inherit;
-  font-size: inherit;
+  font-size: 1.5rem;
   outline: none;
   border: 0;
 }
 
-/* button {
-  background-color: #fff;
-  border: 1px solid green;
-  border-radius: 4px;
-  color: inherit;
+button {
+  border: none;
   cursor: pointer;
-  margin-bottom: 1rem;
-  padding: 10px 30px;
-  white-space: nowrap;
-} */
+  margin: 0;
+  padding: 0 0 0 5rem;
+  background: none;
+  font-size: 1.5rem;
+  color: gray;
+  outline: inherit;
+}
 
-.search-field {
-  /* position: relative; */
-  border: 0.2rem solid green;
-  padding: 0.5rem 1rem;
+.paragraph {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+#code {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
 }
 
 /* #btn {
