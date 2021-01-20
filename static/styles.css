@@ -83,7 +83,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 #code {
-  margin-top: 1.5rem 1rem 2rem;
+  margin: 1.5rem 1rem 2rem;
   font-size: 1.3rem;
   color: #113a5a;
 }
