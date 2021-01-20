@@ -2,10 +2,10 @@ const express = require("express");
 
 const MongoClient = require("mongodb").MongoClient;
 
-const uri = process.env.MONGODB_URI;
-
-// const uri =
-//   "mongodb+srv://ask:DRNU7O8K9fvKDYEK@cluster0.riujc.mongodb.net/eng_db?retryWrites=true&w=majority";
+// uncomment line 1 and comment out line 2 when deploying to heroku
+// const uri = process.env.MONGODB_URI;
+const uri =
+  "mongodb+srv://ask:DRNU7O8K9fvKDYEK@cluster0.riujc.mongodb.net/eng_db?retryWrites=true&w=majority";
 
 async function init() {
   const client = new MongoClient(uri, { useNewUrlParser: true });
@@ -43,33 +43,17 @@ async function init() {
     });
 
     // start the server listening for requests
-    app.listen(process.env.PORT || 3000, () =>
-      console.log("Server is running...")
-    );
+    // app.listen(process.env.PORT || 3000, () =>
+    //   console.log("Server is running...")
+    // );
 
-    // console.log(`running on http://localhost:${PORT}`);
+    //comment out 3 line while deploying to heroku
+    const PORT = process.env.PORT || 3000;
+    app.use(express.static("./static"));
+    app.listen(PORT);
+
+    console.log(`running on http://localhost:${PORT}`);
   });
 }
 
 init();
-
-// db.listCollections()
-//   .toArray()
-//   .then((docs) => {
-//     console.log("Available collections:");
-//     docs.forEach((doc, idx, array) => {
-//       console.log(doc.name);
-//     });
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   })
-//   .finally(() => {
-//     client.close();
-//   });
-
-// db.dict.createIndex({
-//   word: "text"
-// });
-
-// db.dict.find({ $text: { $search: "new" } }).sort({ score: { $meta: "textScore" } });

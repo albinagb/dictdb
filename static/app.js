@@ -10,6 +10,8 @@ async function searchResults() {
   const res = await fetch("/get?search=" + encodeURIComponent(searchTerm));
   const json = await res.json();
 
+  console.log(json);
+
   if (json.size > 0) {
     let allDef =
       "\n" + json.size + " definitions of '" + searchTerm + "' found:\n\n";
