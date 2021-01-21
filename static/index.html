@@ -14,33 +14,53 @@
     <title>Eng Dict App</title>
   </head>
   <body>
-    <div class="header">Wordlib - Online Vocabulary</div>
-    <div id="searchContainer">
-      <div class="search-field">
-        <input type="search" placeholder="Search" id="search" />
-        <div class="clearBtn">
-          <svg
-            focusable="false"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-            ></path>
-            <path
-              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-            ></path>
-          </svg>
-        </div>
-        <span id="borderline"></span>
-        <button type="submit">
-          <i class="fas fa-search" id="btn"></i>
-        </button>
+    <!-- <div class="wrap">
+      <div class="header">
+        
       </div>
-      <!-- <button id="btn">Search</button> -->
-    </div>
-    <div class="paragraph">
-      <div id="code"></div>
+      <div >
+        
+         
+        </div>
+        
+      </div>
+     
+    </div> -->
+
+    <div class="wrapper">
+      <div class="box header">
+        <ul>
+          <li>Wordlib - Online Vocabulary</li>
+          <li><a href="#">Github</a></li>
+        </ul>
+      </div>
+      <div id="searchContainer" class="box content">
+        <div class="search-field">
+          <input type="search" placeholder="Search" id="search" />
+          <div class="clearBtn">
+            <svg
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              ></path>
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              ></path>
+            </svg>
+          </div>
+          <span id="borderline"></span>
+          <button type="submit">
+            <i class="fas fa-search" id="btn"></i>
+          </button>
+        </div>
+        <div class="paragraph">
+          <div id="code"></div>
+        </div>
+      </div>
+      <div class="box footer">Footer</div>
     </div>
 
     <script src="app.js"></script>

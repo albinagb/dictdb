@@ -12,7 +12,7 @@ async function searchResults() {
   const res = await fetch("/get?search=" + encodeURIComponent(searchTerm));
   const json = await res.json();
 
-  console.log(json);
+  // console.log(json);
 
   if (json.size > 0) {
     let allDef =
@@ -33,8 +33,6 @@ function clear() {
   search.value = "";
   clearBtn.style.visibility = "hidden";
   borderEl.style.visibility = "hidden";
-  // clearBtn.classList.remove("clearBtnNew");
-  // borderEl.classList.remove("borderline");
 }
 
 btn.addEventListener("click", searchResults);
@@ -60,6 +58,8 @@ search.addEventListener("keyup", (event) => {
 
 //regex: deleting unescessary simbols
 
-// Clear() function
+let headerEl = document.querySelector(".header");
 
-// clearBtn.style.display = "none";
+let headerlength = headerEl.length;
+
+console.log(headerlength);
