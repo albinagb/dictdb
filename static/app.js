@@ -1,11 +1,13 @@
 const btn = document.getElementById("btn");
 const code = document.getElementById("code");
 const search = document.getElementById("search");
+let clearBtn = document.querySelector(".clearBtn");
+let borderEl = document.getElementById("borderline");
 
 async function searchResults() {
   code.innerText = "please wait";
 
-  let searchTerm = search.value.trim();
+  let searchTerm = search.value.trim().toLowerCase();
 
   const res = await fetch("/get?search=" + encodeURIComponent(searchTerm));
   const json = await res.json();
@@ -27,12 +29,37 @@ async function searchResults() {
   }
 }
 
+function clear() {
+  search.value = "";
+  clearBtn.style.visibility = "hidden";
+  borderEl.style.visibility = "hidden";
+  // clearBtn.classList.remove("clearBtnNew");
+  // borderEl.classList.remove("borderline");
+}
+
 btn.addEventListener("click", searchResults);
 
 search.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) {
     searchResults();
+    // clear();
+  }
+
+  let val = search.value.length;
+
+  if (val === "" || val == null) {
+    return false;
+  } else {
+    clearBtn.style.visibility = "visible";
+    borderEl.style.visibility = "visible";
+    clearBtn.classList.add("clearBtnNew");
+    borderEl.classList.add("borderline");
+    clearBtn.addEventListener("click", clear);
   }
 });
 
-//regex: deleting unescessary
+//regex: deleting unescessary simbols
+
+// Clear() function
+
+// clearBtn.style.display = "none";
