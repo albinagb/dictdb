@@ -77,7 +77,7 @@ li {
 }
 
 .header ul #secondLi:hover {
-  color: #113a5a;
+  color: #1e5a88;
 }
 
 #code {
@@ -166,9 +166,10 @@ button {
 
 .footer {
   margin: 0;
-  padding: 2.5rem 0 1.5rem 2rem;
+  padding: 1.2rem 0 1.2rem 2rem;
   font-size: 1.5rem;
   color: #113a5a;
+  background-color: rgba(31, 74, 119, 0.03);
 }
 
 @media only screen and (min-width: 20rem) {
