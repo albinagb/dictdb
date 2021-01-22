@@ -26,9 +26,16 @@ li {
   text-decoration: none;
 }
 
+#searchContainer {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0;
+  padding: 0;
+}
+
 .search-field {
   display: grid;
-  grid-template-columns: auto 2rem 0.7rem 3rem;
+  grid-template-columns: 24rem 2rem 0.7rem 3rem;
   grid-template-rows: 2.5rem;
   grid-gap: 0.2rem;
   box-shadow: 0 0 0.3rem 0 rgba(61, 85, 99, 0.3);
@@ -132,7 +139,7 @@ button {
 
 .wrapper {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 1em;
   grid-template-areas:
     "header"
     "."
@@ -160,7 +167,7 @@ button {
       "header  header  header"
       ". content ."
       "footer  footer  footer";
-    max-width: 37.5rem;
+    max-width: 600px;
   }
 }
 
