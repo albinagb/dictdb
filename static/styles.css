@@ -33,6 +33,38 @@ li {
   padding: 0;
 }
 
+/* Grid */
+
+.content {
+  grid-area: content;
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+  justify-self: end;
+  margin: 0;
+}
+
+.definEl {
+  grid-area: definEl;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "header"
+    "."
+    "content"
+    "."
+    "definEl"
+    "footer";
+}
+
 .search-field {
   display: grid;
   grid-template-columns: 24rem 2rem 0.7rem 3rem;
@@ -104,13 +136,13 @@ button {
   outline: inherit;
 }
 
-.paragraph {
+/* .paragraph {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   margin: 0;
   padding: 0;
-}
+} */
 
 #code {
   margin: 1.5rem 1rem 2rem;
@@ -118,62 +150,9 @@ button {
   color: #113a5a;
 }
 
-/* Grid */
-
-.content {
-  grid-area: content;
-}
-
-.header {
-  grid-area: header;
-}
-
-.footer {
-  grid-area: footer;
-}
-
-.wrapper {
-  background-color: #fff;
-  color: #444;
-}
-
-.wrapper {
-  display: grid;
-  grid-gap: 1em;
-  grid-template-areas:
-    "header"
-    "."
-    "content"
-    "."
-    "footer";
-}
-
-@media only screen and (min-width: 30rem) {
-  .wrapper {
-    grid-template-columns: 20% auto 20%;
-    grid-template-areas:
-      "header header header"
-      ". content ."
-      ". . ."
-      "footer footer footer";
-  }
-}
-
-@media only screen and (min-width: 75rem) {
-  .wrapper {
-    grid-gap: 20px;
-    grid-template-columns: 28rem auto 28rem;
-    grid-template-areas:
-      "header  header  header"
-      ". content ."
-      "footer  footer  footer";
-    max-width: 600px;
-  }
-}
-
 .box {
   color: #fff;
-  padding: 10px;
+  padding: 1rem;
   font-size: 150%;
 }
 
@@ -187,7 +166,45 @@ button {
 }
 
 .footer {
-  padding: 1rem;
+  padding-right: 3rem;
   font-size: 1.5rem;
   color: #113a5a;
+}
+
+@media only screen and (min-width: 20rem) {
+  .wrapper {
+    grid-template-columns: 10% auto 10%;
+    grid-template-areas:
+      "header header header"
+      ". content ."
+      ". . ."
+      "definEl definEl definEl"
+      ". . footer";
+  }
+}
+
+@media only screen and (min-width: 30rem) {
+  .wrapper {
+    grid-template-columns: 20% auto 20%;
+    grid-template-areas:
+      "header header header"
+      ". content ."
+      ". . ."
+      "definEl definEl definEl"
+      ". . footer";
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  .wrapper {
+    grid-gap: 20px;
+    grid-template-columns: 28rem auto 28rem;
+    grid-template-areas:
+      "header  header  header"
+      ". content ."
+      ". . ."
+      "definEl definEl definEl"
+      ".  .  footer";
+    max-width: 600px;
+  }
 }
