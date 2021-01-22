@@ -81,7 +81,7 @@ li {
 }
 
 #code {
-  margin-top: 1.5rem;
+  margin: 1.5rem 0 0.5rem 0;
   font-size: 1.3rem;
   color: #113a5a;
 }
@@ -169,10 +169,19 @@ button {
   padding: 1.2rem 0 1.2rem 2rem;
   font-size: 1.5rem;
   color: #113a5a;
-  background-color: rgba(31, 74, 119, 0.03);
+  /* background-color: rgba(31, 74, 119, 0.03); */
 }
 
-@media only screen and (min-width: 20rem) {
+@media only screen and (max-width: 20rem) {
+  .wrapper {
+    grid-template-columns: 5% auto 5%;
+    grid-template-areas:
+      "header header header"
+      ". content .";
+  }
+}
+
+@media only screen and (max-width: 56rem) {
   .wrapper {
     grid-template-columns: 10% auto 10%;
     grid-template-areas:
@@ -183,20 +192,10 @@ button {
 
 @media only screen and (min-width: 30rem) {
   .wrapper {
-    grid-template-columns: 20% auto 20%;
-    grid-template-areas:
-      "header header header"
-      ". content .";
-  }
-}
-
-@media only screen and (min-width: 75rem) {
-  .wrapper {
     grid-gap: 20px;
-    grid-template-columns: 28rem auto 28rem;
+    grid-template-columns: 20% auto 20%;
     grid-template-areas:
       "header  header  header"
       ". content .";
-    max-width: 600px;
   }
 }
