@@ -26,13 +26,6 @@ li {
   text-decoration: none;
 }
 
-#searchContainer {
-  display: flex;
-  flex-flow: column wrap;
-  margin: 0;
-  padding: 0;
-}
-
 /* Grid */
 
 .content {
@@ -43,26 +36,46 @@ li {
   grid-area: header;
 }
 
-.footer {
-  grid-area: footer;
-  justify-self: end;
-  margin: 0;
-}
-
-.definEl {
-  grid-area: definEl;
-}
-
 .wrapper {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 1em;
   grid-template-areas:
     "header"
-    "."
-    "content"
-    "."
-    "definEl"
-    "footer";
+    "content";
+  min-height: 100vh;
+}
+
+.box {
+  color: #fff;
+  padding: 10px;
+  font-size: 150%;
+}
+
+.header {
+  background-color: #62a0d2;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  height: 7rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header ul {
+  display: grid;
+}
+
+#code {
+  margin: 1.5rem 1rem 2rem;
+  font-size: 1.3rem;
+  color: #113a5a;
+}
+
+#searchContainer {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0;
+  padding: 0;
 }
 
 .search-field {
@@ -71,7 +84,7 @@ li {
   grid-template-rows: 2.5rem;
   grid-gap: 0.2rem;
   box-shadow: 0 0 0.3rem 0 rgba(61, 85, 99, 0.3);
-  margin: 15rem auto 0;
+  margin: 0 auto 0;
   padding: 0.5rem 1rem;
   background-color: #a8d3ed;
   border-radius: 2rem;
@@ -144,29 +157,9 @@ button {
   padding: 0;
 } */
 
-#code {
-  margin: 1.5rem 1rem 2rem;
-  font-size: 1.3rem;
-  color: #113a5a;
-}
-
-.box {
-  color: #fff;
-  padding: 1rem;
-  font-size: 150%;
-}
-
-.header {
-  background-color: #62a0d2;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
-}
-
 .footer {
-  padding-right: 3rem;
+  margin: 0;
+  padding-right: 5rem;
   font-size: 1.5rem;
   color: #113a5a;
 }
@@ -176,10 +169,7 @@ button {
     grid-template-columns: 10% auto 10%;
     grid-template-areas:
       "header header header"
-      ". content ."
-      ". . ."
-      "definEl definEl definEl"
-      ". . footer";
+      ". content .";
   }
 }
 
@@ -188,10 +178,7 @@ button {
     grid-template-columns: 20% auto 20%;
     grid-template-areas:
       "header header header"
-      ". content ."
-      ". . ."
-      "definEl definEl definEl"
-      ". . footer";
+      ". content .";
   }
 }
 
@@ -201,10 +188,7 @@ button {
     grid-template-columns: 28rem auto 28rem;
     grid-template-areas:
       "header  header  header"
-      ". content ."
-      ". . ."
-      "definEl definEl definEl"
-      ".  .  footer";
+      ". content .";
     max-width: 600px;
   }
 }
