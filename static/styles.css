@@ -81,7 +81,8 @@ li {
 }
 
 #code {
-  margin: 1.5rem 0 0.5rem 0;
+  margin: 1.5rem 2rem 0.5rem 2rem;
+  padding: 0 10%;
   font-size: 1.3rem;
   color: #113a5a;
 }
