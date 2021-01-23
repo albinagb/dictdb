@@ -85,6 +85,7 @@ li {
   padding: 0 10%;
   font-size: 1.3rem;
   color: #113a5a;
+  transition: height 350ms ease-in-out;
 }
 
 #searchContainer {
