@@ -31,6 +31,7 @@ async function searchResults() {
 
 function clear() {
   search.value = "";
+  code.innerHTML = "";
   clearBtn.style.visibility = "hidden";
   borderEl.style.visibility = "hidden";
 }
