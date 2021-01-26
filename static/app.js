@@ -29,19 +29,57 @@ async function searchResults() {
   }
 }
 
+// Clear all definitions
+
 function clear() {
   search.value = "";
-  code.innerHTML = "";
+  animateCode(contentClear);
   clearBtn.style.visibility = "hidden";
   borderEl.style.visibility = "hidden";
 }
+
+function contentClear() {
+  code.innerHTML = "";
+  console.log("this second");
+}
+
+function animateCode(callback) {
+  console.log("this first");
+  let dur = 500;
+
+  code.animate(
+    { opacity: [0.8, 0] },
+    {
+      duration: dur,
+      easing: "ease",
+      iterations: 1,
+    }
+  );
+  setTimeout(function () {
+    callback();
+  }, dur - 100);
+}
+
+// [
+//   {
+//     transform: "translateY(50%)",
+//     opacity: 0.8,
+//     easing: "linear",
+//   },
+//   {
+//     transform: "translateY(0%)",
+//     opacity: 0,
+//     easing: "linear",
+//   },
+// ],
+
+// Event Listeners
 
 btn.addEventListener("click", searchResults);
 
 search.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) {
     searchResults();
-    // clear();
   }
 
   let val = search.value.length;
@@ -63,4 +101,9 @@ let headerEl = document.querySelector(".header");
 
 let headerlength = headerEl.length;
 
-console.log(headerlength);
+// Transitions Only After Page Loaded
+let bodyEl = document.body;
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  bodyEl.classList.add("transitionsEl");
+});
