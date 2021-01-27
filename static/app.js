@@ -5,7 +5,7 @@ let clearBtn = document.querySelector(".clearBtn");
 let borderEl = document.getElementById("borderline");
 
 async function searchResults() {
-  code.innerText = "please wait";
+  // code.innerText = "please wait";
 
   let searchTerm = search.value.trim().toLowerCase();
 
@@ -18,11 +18,15 @@ async function searchResults() {
     let allDef =
       "\n" + json.size + " definitions of '" + searchTerm + "' found:\n\n";
 
-    json.dict.forEach((entry, indx) => {
-      allDef = allDef + (indx + 1 + ". " + entry.def + "\n");
-    });
+    animateFirstCode(defField);
 
-    code.innerText = allDef;
+    function defField() {
+      json.dict.forEach((entry, indx) => {
+        allDef = allDef + (indx + 1 + ". " + entry.def + "\n");
+      });
+
+      code.innerText = allDef;
+    }
   } else {
     code.innerText =
       "\nNothing found for '" + searchTerm + "', please try something else.";
@@ -40,11 +44,9 @@ function clear() {
 
 function contentClear() {
   code.innerHTML = "";
-  console.log("this second");
 }
 
 function animateCode(callback) {
-  console.log("this first");
   let dur = 500;
 
   code.animate(
@@ -57,6 +59,23 @@ function animateCode(callback) {
   );
   setTimeout(function () {
     callback();
+  }, dur - 100);
+}
+
+// animate def code
+
+function animateFirstCode(firstCallback) {
+  let dur = 500;
+  code.animate(
+    { opacity: [0, 0.6] },
+    {
+      duration: dur,
+      easing: "ease",
+      iterations: 1,
+    }
+  );
+  setTimeout(function () {
+    firstCallback();
   }, dur - 100);
 }
 
