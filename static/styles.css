@@ -186,6 +186,25 @@ button {
 
 @media (max-width: 480px) {
 
+  .header {
+    /* width: 100vh; */
+    height: 9rem;
+  }
+
+  .box {
+    padding: 0;
+  }
+
+  .header ul #firstLi {
+    grid-column: 1 / 2;
+    margin: 0;
+  }
+  
+  .header ul #secondLi {
+    grid-column: 2;
+    margin: 0;
+  }
+
   .wrapper {
     min-height: 100vh;
   }
@@ -193,7 +212,6 @@ button {
   #searchContainer {
     grid-row: 2 span 1;
     margin: 17rem 3rem 0 3rem;
-    /* background-color: red; */
     width: 27rem;
     height: 75vh;
   }
