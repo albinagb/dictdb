@@ -202,7 +202,7 @@ button {
   
   .header ul #secondLi {
     grid-column: 2;
-    margin: 0;
+    margin: 0 0 0 7rem;
   }
 
   .wrapper {
@@ -211,14 +211,14 @@ button {
 
   #searchContainer {
     grid-row: 2 span 1;
-    margin: 17rem 3rem 0 3rem;
-    width: 27rem;
+    margin: 12rem 1rem 0 1rem;
+    width: 23rem;
     height: 75vh;
   }
 
   .search-field {
-    width: 24rem;
-    grid-template-columns: 15rem 2rem 0.7rem 3rem;
+    width: 21rem;
+    grid-template-columns: 13rem 2rem 0.7rem 3rem;
   }
 
   }
