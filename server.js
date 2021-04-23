@@ -21,33 +21,20 @@ async function init() {
       const db = await client.db("eng_db");
       const collection = db.collection("dict");
 
+      console.log(req.query);
+
       const dict = await collection
         .find(
           { word: req.query.search },
-          // {
-          //   $text: { $search: req.query.search },
-          // },
-          // { _id: 0 },
-          console.log(req.query.search)
+          { speech_part: req.query.search }
         )
-
-        // .sort({ score: { $meta: "textScore" } })
-        // .limit(1)
-
-        .toArray();
+      .toArray();
       dict.forEach((val) => {
         delete val._id;
       });
       let size = Object.keys(dict).length;
       res.json({ size, dict }).end();
     });
-
-    // start the server listening for requests
-    // app.listen(process.env.PORT || 3000, () =>
-    //   console.log("Server is running...")
-    // );
-
-    //comment out 3 line while deploying to heroku
     const PORT = process.env.PORT || 3000;
     app.use(express.static("./static"));
     app.listen(PORT);

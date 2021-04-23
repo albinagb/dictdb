@@ -1,5 +1,5 @@
 const btn = document.getElementById("btn");
-const code = document.getElementById("code");
+const code = document.querySelector(".code");
 const search = document.getElementById("search");
 let clearBtn = document.querySelector(".clearBtn");
 let borderEl = document.getElementById("borderline");
@@ -78,19 +78,6 @@ function animateFirstCode(firstCallback) {
     firstCallback();
   }, dur - 100);
 }
-
-// [
-//   {
-//     transform: "translateY(50%)",
-//     opacity: 0.8,
-//     easing: "linear",
-//   },
-//   {
-//     transform: "translateY(0%)",
-//     opacity: 0,
-//     easing: "linear",
-//   },
-// ],
 
 // Event Listeners
 

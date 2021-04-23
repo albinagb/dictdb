@@ -80,7 +80,7 @@ li {
   color: #376a91;
 }
 
-#code {
+.code {
   margin: 1.5rem 2rem 0.5rem 2rem;
   padding: 0 10%;
   font-size: 1.3rem;
@@ -181,21 +181,27 @@ button {
   min-width: 100vw;
 }
 
-@media only screen and (max-width: 20rem) {
-  .wrapper {
-    grid-template-columns: 5% auto 5%;
-  }
-}
 
-@media only screen and (max-width: 50rem) {
-  .wrapper {
-    grid-template-columns: 10% auto 10%;
-  }
-}
+/* 1. Mobile devices */
 
-@media only screen and (min-width: 50rem) {
+@media (max-width: 480px) {
+
   .wrapper {
-    grid-gap: 1.25rem;
-    grid-template-columns: 20% auto 20%;
+    min-height: 100vh;
   }
-}
+
+  #searchContainer {
+    grid-row: 2 span 1;
+    margin: 17rem 3rem 0 3rem;
+    /* background-color: red; */
+    width: 27rem;
+    height: 75vh;
+  }
+
+  .search-field {
+    width: 24rem;
+    grid-template-columns: 15rem 2rem 0.7rem 3rem;
+  }
+
+  }
+
