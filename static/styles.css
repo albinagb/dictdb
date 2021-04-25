@@ -17,6 +17,10 @@ a {
   color: inherit;
 }
 
+ul {
+  margin-top: 0.9rem;
+}
+
 li {
   list-style-type: none;
   text-decoration: none;
@@ -34,7 +38,7 @@ li {
 
 .wrapper {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0.2rem;
   grid-template-areas:
     "header header header"
     "content content content";
@@ -44,24 +48,24 @@ li {
 .box {
   color: #fff;
   padding: 10px;
-  font-size: 150%;
 }
 
 .header {
   background-color: #62a0d2;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   margin: 0;
   padding: 0;
-  height: 5rem;
+  height: 5.2rem;
 }
 
 .header ul {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0.1rem;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
+  margin-left: 2rem;
 }
 
 .header ul #firstLi {
@@ -72,8 +76,14 @@ li {
 .header ul #secondLi {
   grid-column: 3;
   grid-row: 1;
-  justify-self: end;
-  margin-right: 3rem;
+  justify-self: center;
+  margin-left: 12rem;
+  margin-right: 2rem;
+}
+
+.header ul #middleLI {
+  grid-column: 1 span 2;
+  grid-row: 2;
 }
 
 .header ul #secondLi:hover {
@@ -176,9 +186,8 @@ button {
 .footer {
   margin: 0;
   padding: 1.2rem 0 1.2rem 2rem;
-  font-size: 1.5rem;
-  color: #113a5a;
-  min-width: 100vw;
+  font-size: 1rem;
+  color: #576f80;
 }
 
 
@@ -188,21 +197,21 @@ button {
 
   .header {
     /* width: 100vh; */
-    height: 9rem;
+    /* height: 9rem; */
   }
 
   .box {
     padding: 0;
   }
 
-  .header ul #firstLi {
-    grid-column: 1 / 2;
-    margin: 0;
+  .header ul {
+    margin-left: 0;
   }
-  
-  .header ul #secondLi {
-    grid-column: 2;
-    margin: 0 0 0 7rem;
+
+.header ul #secondLi {
+    justify-self: start;
+  margin-left: 3rem;
+  margin-right: 2rem;
   }
 
   .wrapper {
@@ -213,13 +222,20 @@ button {
     grid-row: 2 span 1;
     margin: 12rem 1rem 0 1rem;
     width: 23rem;
-    height: 75vh;
+    height: 55vh;
   }
 
   .search-field {
     width: 21rem;
     grid-template-columns: 13rem 2rem 0.7rem 3rem;
   }
+
+  .footer {
+    padding: 0 0 1.2rem 2rem;
+    font-size: 0.9rem;
+    color: #576f80;
+  }
+  
 
   }
 
